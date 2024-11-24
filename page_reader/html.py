@@ -9,7 +9,6 @@ import aiohttp
 
 from text_utils import process_web_content
 
-
 async def get_web_content(url:str, encoding:str = 'utf-8', timeout:int = 10) -> str:
     timeout_obj = aiohttp.ClientTimeout(total=timeout)
     async with aiohttp.ClientSession(timeout = timeout_obj) as session:
