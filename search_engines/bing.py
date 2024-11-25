@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 from retry import retry
 
-from text_utils import process_web_content
+from text_utils import process_web_content, html_to_text
 
 from .schema import SearchRecord
 
@@ -84,7 +84,7 @@ class BingRequest(BaseModel):
 def post_process(data: List[dict]) -> List[dict]:
     return [
         {
-        "title": d.get('name', "Unnamed"),
+        "title": html_to_text(d.get('name', "Unnamed")),
         "date": datetime.strptime(d['datePublished'][:19], "%Y-%m-%dT%H:%M:%S") 
             if 'datePublished' in d else datetime(1970,1,1,0,0,0),
         "url": d.get('url', "No URL"),    

@@ -7,7 +7,6 @@ class BaseQueryRewriter:
         return query
     
     
-    
 REWRITE_PROMPT = """
 Rewrite the query, make it more suitable for search engine.
 Make the intent of the query more clear. add necessary components to the query.

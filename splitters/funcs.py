@@ -71,3 +71,24 @@ def langchain_recursive_chinese_split(text:str, chunk_size:int = 250) -> List[st
     )
     
     return split_fn(text)
+
+
+def split_search_records(
+    search_records:list, 
+    split_fn:callable = langchain_recursive_chinese_split):
+    
+    splitted_search_records = []
+    
+    for s in search_records:
+        if s.content is None or len(s.content.strip()) == 0:
+            s.content = s.snippet
+            splitted_search_records.append(s)
+            continue
+        
+        chunks = split_fn(s.content)
+        
+        for c in chunks:
+            splitted_search_records.append(
+                s.copy_update(content = c)
+            )
+    return splitted_search_records
