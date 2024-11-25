@@ -5,7 +5,9 @@
 NLP的优化过程，与`标注`一样low，没人愿意优化，谁说优化，就是扯特么蛋。
 
 Execute a Search pipeline, [query_rewrite] -> [search engine] -> [web scraper] -> [content chunking] -> [content reranking]
-And finally use an React Agent to answer the question.
+And finally use an React Agent to answer the question.    
+
+这一步rewrite完全是多余的，为了流程而流程。    
 ```python
 import logging
 logging.basicConfig(level=logging.ERROR)
