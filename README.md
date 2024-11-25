@@ -1,6 +1,8 @@
 ## RAG-SE Tools
 
-**本地能跑的小模型RAG**
+**本地能跑的小模型RAG**    
+
+NLP的优化过程，与`标注`一样low，没人愿意优化，谁说优化，就是扯特么蛋。
 
 Execute a Search pipeline, [query_rewrite] -> [search engine] -> [web scraper] -> [content chunking] -> [content reranking]
 And finally use an React Agent to answer the question.
