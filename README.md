@@ -1,6 +1,6 @@
 ## RAG-SE Tools
 
-**傻逼东西，谁都能做**
+**本地能跑的小模型RAG**
 
 Execute a Search pipeline, [query_rewrite] -> [search engine] -> [web scraper] -> [content chunking] -> [content reranking]
 And finally use an React Agent to answer the question.
